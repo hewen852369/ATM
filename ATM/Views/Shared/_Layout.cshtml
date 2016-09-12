@@ -33,7 +33,8 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - MVC Bank</p>
+            <!-- using Heml.Action helper to call a action method -->
+            <p>&copy; @DateTime.Now.Year - MVC Bank - @Html.Action("Serial","Home", new {letterCase = "lower" })</p>
         </footer>
     </div>
 
