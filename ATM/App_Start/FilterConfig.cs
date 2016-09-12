@@ -8,6 +8,8 @@ namespace ATM
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            // can chage error view at Web.config
+            //<customEooros mode="On"/>
         }
     }
 }

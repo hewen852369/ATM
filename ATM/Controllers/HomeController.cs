@@ -17,17 +17,24 @@ namespace ATM.Controllers
         //Get /home/about
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
+            ViewBag.Message = "Your contact page.";
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
+            ViewBag.TheMessage = "Having trouble? Send us a message.";
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Contact(string message)
+        {
+            // TODO: send message to HQ
+            ViewBag.TheMessage = "Thanks, we got your message!";
+            return View();
+        }
+
 
         // Get request
         // can use query string start with ? such as serial?letterCase=lower if no parameter define at route
