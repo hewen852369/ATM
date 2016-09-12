@@ -29,6 +29,8 @@ namespace ATM.Controllers
             return View();
         }
 
+        // Get request
+        // can use query string start with ? such as serial?letterCase=lower if no parameter define at route
         public ActionResult Serial(string letterCase)
         {
             var serial = "ASPNETMVCATM1";
@@ -36,7 +38,14 @@ namespace ATM.Controllers
             {
                 return Content(serial.ToLower());
             }
+
+            // different actionresult return type
+            //return Json(new { name = "serial", value = serial}, JsonRequestBehavior.AllowGet);
+            //return new HttpStatusCodeResult(403);
+            //return RedirectToAction("Index");
             return Content(serial);
+
+
         }
     }
 }
