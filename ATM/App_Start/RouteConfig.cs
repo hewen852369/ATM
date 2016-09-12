@@ -13,11 +13,22 @@ namespace ATM
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // crating custom url route for serial number look up
             routes.MapRoute(
+                name: "Serial number",
+                url: "serial/{letterCase}",
+                defaults: new { controller = "Home", action = "Serial", letterCase="upper" }
+            );
+            // define route setting
+            routes.MapRoute(
+                // give route a name
                 name: "Default",
+                // url format for route
                 url: "{controller}/{action}/{id}",
+                // give defaults if controller and action is not specific according to the url format
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
         }
     }
 }
