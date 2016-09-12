@@ -8,6 +8,8 @@ namespace ATM
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            // using bundle to bundle files and use wildcards
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -26,6 +28,14 @@ namespace ATM
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            // using BundleTable to swich between regular and minified files, ture means using minified files
+            BundleTable.EnableOptimizations = true;
+
+            //bundles.Add(new ScriptBundle("~/bundles/jquery","CDN goes here").Include(
+            //"~/Scripts/jquery-{version}.js"));
+            // enable using cdn
+            bundles.UseCdn = true;
         }
     }
 }
