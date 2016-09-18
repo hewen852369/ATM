@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -13,6 +14,9 @@ namespace ATM.Models
         [Required]
         [Display(Name = "Account #")]
         //[StringLength(10,MinimumLength = 6)]
+        //few attributes for code first migration
+        [StringLength(10)]
+        [Column(TypeName ="varchar")]
         [RegularExpression(@"\d{6,10}",ErrorMessage = "Account # must be between 6 and 10 digits.")]
         public string AccountNumber { get; set; }
 
@@ -38,6 +42,7 @@ namespace ATM.Models
         public virtual ApplicationUser User { get; set; }
 
         // adding user id
+        [Required]
         public string ApplicationUserId { get; set; }
     }
 }

@@ -157,8 +157,9 @@ namespace ATM.Controllers
                 {
                     // Following black of code insert new user to chekcingAccount table at database
                     var db = new ApplicationDbContext();
+                    var accountNumber = (123456 + db.CheckingAccounts.Count()).ToString().PadLeft(10, '0');
                     var chekcingAccount = new CheckingAccount { FirstName = model.FirstName, LastName = model.LastName,
-                    AccountNumber = "0000123456", Balance = 0, ApplicationUserId = user.Id};
+                    AccountNumber = accountNumber, Balance = 0, ApplicationUserId = user.Id};
                     db.CheckingAccounts.Add(chekcingAccount);
                     db.SaveChanges();
 
