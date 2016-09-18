@@ -153,11 +153,16 @@ namespace ATM.Controllers
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+
+                // IdentityResult type
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    //add new claim to claim table with new user's firstname
+                    UserManager.AddClaim(user.Id, new Claim(ClaimTypes.GivenName, model.FirstName));
                     var service = new CheckingAccountService(HttpContext.GetOwinContext().Get<ApplicationDbContext>());
                     service.CreateCheckingAccount(model.FirstName,model.LastName,user.Id,0);
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771

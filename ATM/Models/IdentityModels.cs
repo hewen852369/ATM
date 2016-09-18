@@ -16,6 +16,9 @@ namespace ATM.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        // Add Pin attribute to AspNetUsers table.
+        public string Pin { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
