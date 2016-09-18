@@ -4,26 +4,24 @@
     //Layout = "MyLayout.cshtml";
 }
 
-<div class="jumbotron">
-    <h1>Middle Valley Community Bank</h1>
-    <p class="lead">Middle Valley Community Bank offers the first-ever web-based ATM. Give it a try today!</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Powered by ASP.NET</a></p>
-</div>
+
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Rigister</h2>
-        <p>
-            Open a account with us
-        </p>
-        <p>@Html.ActionLink("Register","Register","Account",null,new {@class="btn btn-default"})</p>
+    <div class="col-md-6 margin-top-20">
+        <a href="#" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-circle-arrow-down"></span>  Withdrawal</a>
+        <a href="#" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-flag"></span>  Quick case $100</a>
+        <a href="#" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-question-sign"></span>  Balance Inqury</a>
     </div>
-    <div class="col-md-4">
-        <h2>Log in</h2>
-        <p>Access your existing account</p>
-        <p>@Html.ActionLink("Log in", "Login", "Account", null, new { @class = "btn btn-default" })</p>
-    </div>
+
+    <div class="col-md-6 margin-top-20">
+        <a href="#" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-print"></span>  Print Statement</a>
+        <a href="#" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-transfer"></span>  Transfer Funds</a>
+        <a href="#" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-circle-arrow-up"></span>  Deposit</a>
+    </div>   
 </div>
+@section scripts{
+    <script>var testing = true;</script>
+}
 @*
     <!-- following code block shows the example of using razor syntax -->
     You are using @Request.Browser.Browser, and that's OK!
