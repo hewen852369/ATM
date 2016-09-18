@@ -47,6 +47,7 @@ namespace ATM.Controllers
         }
 
         // POST: CheckingAccount/Create
+        // add view by choosing create template, ChekcingAccount model and chekc reference script libaries and use layout page
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {

@@ -5,49 +5,41 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h4>CheckingAccount</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @*DisplayNameFor return then name of the attribute*@
+                @*Do not want to display the attribute name*@
+                @*Could just replace DIsplayNameFor with static html*@
+                @*Adding display attribute at chekcingaccount class*@
+                @Html.DisplayNameFor(model => model.AccountNumber)
+            </dt>
 
-<div>
-    <h4>CheckingAccount</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @*DisplayNameFor return then name of the attribute*@
-            @Html.DisplayNameFor(model => model.AccountNumber)
-        </dt>
+            <dd>
+                @*DisplayFor return then value of the attribute*@
+                @Html.DisplayFor(model => model.AccountNumber)
+            </dd>
 
-        <dd>
-            @*DisplayFor return then value of the attribute*@
-            @Html.DisplayFor(model => model.AccountNumber)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Balance)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LaseName)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Balance)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.LaseName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Balance)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Balance)
-        </dd>
-
-    </dl>
+        </dl>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
