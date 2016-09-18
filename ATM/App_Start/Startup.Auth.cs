@@ -24,6 +24,7 @@ namespace ATM
             // Configure the sign in cookie
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
+                // Have other authentication type like two factory authentication
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString("/Account/Login"),
                 Provider = new CookieAuthenticationProvider
@@ -54,9 +55,10 @@ namespace ATM
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            // add facebook login
+            app.UseFacebookAuthentication(
+               appId: "1764671227130381",
+               appSecret: "1ff2e94c1d12b431afb2ecee92cd9fc7");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
