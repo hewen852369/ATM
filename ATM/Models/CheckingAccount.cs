@@ -38,11 +38,14 @@ namespace ATM.Models
             }
         }
 
-        // as forgien key to referncing the user who holds the account
+        // as forgien key to referncing to userapplication table(who holds account)
+        // enable lazy loading
         public virtual ApplicationUser User { get; set; }
 
         // adding user id
         [Required]
         public string ApplicationUserId { get; set; }
+
+        public virtual ICollection<Transaction> Transactions { get; set; }
     }
 }

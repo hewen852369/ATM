@@ -33,5 +33,7 @@ namespace ATM.Models
         // mapping to DB CheckingAccount table
         // allow to work directly with checking account table
         public DbSet<CheckingAccount> CheckingAccounts { get; set; }
+
+        public DbSet<Transaction> Transcations { get; set; }
     }
 }
