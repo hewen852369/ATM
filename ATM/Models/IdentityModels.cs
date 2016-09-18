@@ -29,5 +29,9 @@ namespace ATM.Models
         {
             return new ApplicationDbContext();
         }
+
+        // mapping to DB CheckingAccount table
+        // allow to work directly with checking account table
+        public DbSet<CheckingAccount> CheckingAccounts { get; set; }
     }
 }

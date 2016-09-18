@@ -155,6 +155,13 @@ namespace ATM.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    // Following black of code insert new user to chekcingAccount table at database
+                    var db = new ApplicationDbContext();
+                    var chekcingAccount = new CheckingAccount { FirstName = model.FirstName, LastName = model.LastName,
+                    AccountNumber = "0000123456", Balance = 0, ApplicationUserId = user.Id};
+                    db.CheckingAccounts.Add(chekcingAccount);
+                    db.SaveChanges();
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771

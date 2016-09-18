@@ -33,5 +33,11 @@ namespace ATM.Models
                 return string.Format("{0} {1}", this.FirstName, this.LastName);
             }
         }
+
+        // as forgien key to referncing the user who holds the account
+        public virtual ApplicationUser User { get; set; }
+
+        // adding user id
+        public string ApplicationUserId { get; set; }
     }
 }
