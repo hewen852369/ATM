@@ -15,19 +15,22 @@ namespace ATM.Models
         //[StringLength(10,MinimumLength = 6)]
         [RegularExpression(@"\d{6,10}",ErrorMessage = "Account # must be between 6 and 10 digits.")]
         public string AccountNumber { get; set; }
+
         [Required]
         [Display(Name = "First name")]
         public string FirstName { get; set; }
+
         [Required]
         [Display(Name = "Last name")]
-        public string LaseName { get; set; }
+        public string LastName { get; set; }
+
         [DataType(DataType.Currency)]
         public decimal Balance { get; set; }
 
         public string Name
         {
             get {
-                return string.Format("{0} {1}", this.FirstName, this.LaseName);
+                return string.Format("{0} {1}", this.FirstName, this.LastName);
             }
         }
     }

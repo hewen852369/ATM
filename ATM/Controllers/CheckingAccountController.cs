@@ -34,7 +34,7 @@ namespace ATM.Controllers
             {
                 AccountNumber = "0000123456",
                 FirstName = "Michael",
-                LaseName = "Sullivan",
+                LastName = "Sullivan",
                 Balance = 500
             };
             return View(checkingAccount);
