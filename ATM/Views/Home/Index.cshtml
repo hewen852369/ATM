@@ -4,20 +4,12 @@
     //Layout = "MyLayout.cshtml";
 }
 
-
-
-<div class="row">
-    <div class="col-md-6 margin-top-20">
-        <a href="#" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-circle-arrow-down"></span>  Withdrawal</a>
-        <a href="#" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-flag"></span>  Quick case $100</a>
+<div class="container">
+    <div class="col-md-6 col-md-offset-2 margin-top-20">
+        <a href="#" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-circle-arrow-down"></span>  Withdrawl</a>
         <a href="@Url.Action("Details","CheckingAccount")" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-question-sign"></span>  Balance Inqury</a>
-    </div>
-
-    <div class="col-md-6 margin-top-20">
-        <a href="#" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-print"></span>  Print Statement</a>
-        <a href="#" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-transfer"></span>  Transfer Funds</a>
         <a href="@Url.Action("Deposit","Transaction",new {checkingAccountId = ViewBag.CheckingAccountId})" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-circle-arrow-up"></span>  Deposit</a>
-    </div>   
+    </div>
 </div>
 
 @*@ViewBag.Pin*@
